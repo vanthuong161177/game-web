@@ -1,0 +1,278 @@
+/* ===========================
+   RESET & NỀN TẢNG
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark: #080c17;
+    --bg-card: #141d34;
+    --primary-blue: #00aaff;
+    --border-color: rgba(255, 255, 255, 0.08);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Be Vietnam Pro", sans-serif;
+    background: var(--bg-dark);
+    color: white;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* ===========================
+   NỀN LIGHTING
+=========================== */
+.background-light {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(0, 170, 255, .22), transparent 35%),
+        radial-gradient(circle at 80% 40%, rgba(0, 255, 180, .12), transparent 30%),
+        radial-gradient(circle at 50% 100%, rgba(100, 0, 255, .20), transparent 40%),
+        #080c17;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 35px;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, .04);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: "Orbitron", sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px var(--primary-blue), 0 0 35px var(--primary-blue);
+}
+
+.search-box input {
+    width: 320px;
+    height: 45px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    padding: 0 20px;
+    background: rgba(255, 255, 255, .08);
+    color: white;
+    font-size: 15px;
+}
+
+.search-box input::placeholder {
+    color: #bbb;
+}
+
+/* ===========================
+   LAYOUT & SIDEBAR
+=========================== */
+.layout {
+    display: flex;
+}
+
+aside {
+    width: 250px;
+    min-height: calc(100vh - 80px);
+    padding: 25px;
+    background: rgba(255, 255, 255, .04);
+    backdrop-filter: blur(18px);
+    border-right: 1px solid rgba(255, 255, 255, .05);
+}
+
+aside h2 {
+    font-family: "Orbitron", sans-serif;
+    margin-bottom: 25px;
+    color: #65c8ff;
+}
+
+.menu-item {
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: .25s;
+    font-weight: 600;
+}
+
+.menu-item:hover {
+    background: #00aaff33;
+    transform: translateX(8px);
+}
+
+.menu-item.active {
+    background: #00aaff55;
+    box-shadow: 0 0 20px rgba(0, 170, 255, .35);
+}
+
+hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid var(--border-color);
+}
+
+/* ===========================
+   MAIN CONTENT
+=========================== */
+main {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* ===========================
+   KHUNG PLAY GAME (ẢN MẶC ĐỊNH)
+=========================== */
+.game-player {
+    display: none; /* Mặc định ẩn */
+    flex-direction: column;
+    width: 100%;
+    height: 580px;
+    background: #0d1323;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .45);
+    animation: fadeIn .35s ease;
+}
+
+.game-player.active {
+    display: flex; /* Hiện khi bật game */
+}
+
+.player-header {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background: #131b30;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.player-header h2 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--primary-blue);
+}
+
+.player-header .right {
+    display: flex;
+    gap: 10px;
+}
+
+.player-header button {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    background: #27314f;
+    transition: .25s;
+}
+
+.player-header button:hover {
+    background: var(--primary-blue);
+    transform: scale(1.08);
+}
+
+#gameFrame {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #000;
+}
+
+/* ===========================
+   DANH SÁCH GAME & CARDS
+=========================== */
+.title {
+    font-family: "Orbitron", sans-serif;
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #66d0ff;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: var(--bg-card);
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s;
+    border: 1px solid rgba(255, 255, 255, .05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .35);
+}
+
+.card:hover {
+    transform: translateY(-10px) rotateX(4deg);
+    box-shadow: 0 25px 50px rgba(0, 170, 255, .35);
+    border-color: var(--primary-blue);
+}
+
+.image {
+    height: 150px;
+    background: linear-gradient(135deg, #1d315b, #243d6d, #32568f);
+    position: relative;
+}
+
+.info {
+    padding: 18px;
+}
+
+.info h3 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.info p {
+    color: #b8b8b8;
+}
+
+/* ===========================
+   ANIMATION & RESPONSIVE
+=========================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width:1000px) {
+    aside { display: none; }
+    main { padding: 20px; }
+}

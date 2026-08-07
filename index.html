@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Web</title>
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HIỆU ỨNG NỀN -->
+    <div class="background-light"></div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            🎮 GAME WEB
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Tìm kiếm game...">
+        </div>
+    </header>
+
+    <!-- BỐ CỤC -->
+    <div class="layout">
+
+        <!-- SIDEBAR -->
+        <aside>
+            <h2>MENU</h2>
+            <div class="menu-item active">🏠 Trang chủ</div>
+            <div class="menu-item">🎮 Tất cả game</div>
+            <div class="menu-item">🔥 Phổ biến</div>
+            <div class="menu-item">🆕 Mới nhất</div>
+            <div class="menu-item">⭐ Yêu thích</div>
+            <hr>
+            <div class="menu-item">⚙ Cài đặt</div>
+        </aside>
+
+        <!-- PHẦN CHÍNH -->
+        <main>
+
+            <!-- KHUNG CHƠI GAME (ẨN MẶC ĐỊNH, CHỈ HIỆN KHI BẤM CHỌN GAME) -->
+            <div class="game-player" id="gamePlayer">
+                <div class="player-header">
+                    <div class="left">
+                        <h2 id="gameTitle">Đang tải game...</h2>
+                    </div>
+                    <div class="right">
+                        <button id="fullscreenBtn" onclick="toggleFullscreen()" title="Phóng to">⛶</button>
+                        <button id="closeBtn" onclick="closeGame()" title="Đóng game">✕</button>
+                    </div>
+                </div>
+                <iframe id="gameFrame" src=""></iframe>
+            </div>
+
+            <!-- DANH SÁCH GAME TOP -->
+            <section class="game-list">
+                <h2 class="title">Game Top</h2>
+
+                <div class="grid">
+
+                    <!-- CARD GAME 1 -->
+                    <div class="card" id="snakeCard">
+                        <div class="image">
+                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150' style='background:%230d111a'><path d='M20 120 H80 V50 H140 V90' fill='none' stroke='%2300ff88' stroke-width='14' stroke-linecap='round' stroke-linejoin='round'/><circle cx='140' cy='90' r='7' fill='%2300ff88'/><circle cx='165' cy='90' r='7' fill='%23ff0055'/><circle cx='140' cy='25' r='6' fill='%23ffcc00'/></svg>" alt="Snake" style="width: 100%; height: 100%; object-fit: cover;" />
+                        </div>
+                        <div class="info">
+                            <h3>Snake</h3>
+                            <p>Classic</p>
+                        </div>
+                    </div>
+                    
+                    <!-- CARD GAME 2 -->
+                    <div class="card" id="tdCard">
+                        <div class="image">
+                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150' style='background:%230d111a'><circle cx='100' cy='75' r='18' fill='%23ff0055'/><circle cx='100' cy='75' r='55' fill='none' stroke='%2300f2fe' stroke-width='2' stroke-dasharray='4'/><circle cx='40' cy='40' r='8' fill='%2300ff88'/><circle cx='160' cy='110' r='8' fill='%2300ff88'/><line x1='100' y1='75' x2='44' y2='43' stroke='%2300f2fe' stroke-width='3'/></svg>" alt="Tower Defense" style="width: 100%; height: 100%; object-fit: cover;" />
+                        </div>
+                        <div class="info">
+                            <h3>Tower Defense</h3>
+                            <p>Strategy</p>
+                        </div>
+                    </div>
+
+                    <!-- CÁC CARD KHÁC (ĐỂ TRANG TRÍ) -->
+                    <div class="card">
+                        <div class="image"></div>
+                        <div class="info">
+                            <h3>Tetris</h3>
+                            <p>Arcade</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="image"></div>
+                        <div class="info">
+                            <h3>Flappy Bird</h3>
+                            <p>Casual</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="image"></div>
+                        <div class="info">
+                            <h3>Pacman</h3>
+                            <p>Maze</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="image"></div>
+                        <div class="info">
+                            <h3>Tank</h3>
+                            <p>Action</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+</body>
+
+</html>
