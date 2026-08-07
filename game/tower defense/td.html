@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower Defense</title>
+    <link rel="stylesheet" href="td.css">
+</head>
+<body>
+
+<div id="game-container">
+    <!-- MÀN HÌNH MENU BẮT ĐẦU -->
+    <div id="start-menu">
+        <h1 class="menu-title">TOWER DEFENSE</h1>
+        <div class="menu-buttons">
+            <button class="btn btn-green" onclick="startGame()">BẮT ĐẦU (SPACE)</button>
+            <button class="btn btn-pink" onclick="openModal('skin-modal')">CỬA HÀNG SKIN</button>
+            <button class="btn btn-cyan" onclick="openModal('settings-modal')">CÀI ĐẶT</button>
+        </div>
+    </div>
+
+    <!-- POPUP CỬA HÀNG SKIN -->
+    <div id="skin-modal" class="modal" style="display: none;">
+        <div class="modal-content skin-box">
+            <h2>🎨 CỬA HÀNG SKIN</h2>
+            <div class="skin-tabs">
+                <button class="tab-btn active" onclick="switchSkinTab('tower-skins')">Skin Tháp</button>
+                <button class="tab-btn" onclick="switchSkinTab('coming-tab')">Tính năng mới</button>
+            </div>
+
+            <!-- Tab 1: Skin Tháp -->
+            <div id="tower-skins" class="tab-content active">
+                <div class="skin-list">
+                    <div class="skin-item" onclick="selectSkin('default')">
+                        <div class="skin-preview red"></div>
+                        <span>Đỏ Neon (Mặc định)</span>
+                    </div>
+                    <div class="skin-item" onclick="selectSkin('ice')">
+                        <div class="skin-preview cyan"></div>
+                        <span>Băng Tuyết</span>
+                    </div>
+                    <div class="skin-item" onclick="selectSkin('metal')">
+                        <div class="skin-preview yellow"></div>
+                        <span>Kim Loại</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Coming Soon -->
+            <div id="coming-tab" class="tab-content" style="display: none;">
+                <div class="coming-soon-box">
+                    <h3>🚧 COMMING SOON...</h3>
+                    <p>Mục này sẽ được cập nhật trong phiên bản tiếp theo!</p>
+                </div>
+            </div>
+
+            <button class="btn btn-cyan" onclick="closeModal('skin-modal')">ĐÓNG</button>
+        </div>
+    </div>
+
+    <!-- POPUP CÀI ĐẶT -->
+    <div id="settings-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>⚙️ CÀI ĐẶT</h2>
+            <div class="setting-item">
+                <label>🔊 Âm thanh:</label>
+                <input type="checkbox" id="sound-toggle" checked>
+            </div>
+            <button class="btn btn-cyan" onclick="closeModal('settings-modal')">ĐÓNG</button>
+        </div>
+    </div>
+
+    <!-- MÀN HÌNH CHƠI GAME -->
+    <div id="game-play-ui" style="display: none;">
+        <div id="top-bar">
+            <div class="stat-box gold">🪙 Vàng: <span id="gold-txt">50</span></div>
+            <div class="stat-box wave">🌊 Wave: <span id="wave-txt">1</span></div>
+            <div class="stat-box hp">❤️ Máu: <span id="hp-txt">100/100</span></div>
+            <button class="exit-btn" onclick="quitToMenu()">🚪 Thoát</button>
+        </div>
+
+        <div class="canvas-wrapper">
+            <canvas id="canvas" width="800" height="320"></canvas>
+            
+            <button id="start-wave-btn" onclick="startWave()">BẮT ĐẦU GAME</button>
+
+            <!-- Overlay Màn Hình Game Over -->
+            <div id="game-over-overlay" style="display: none;">
+                <h2 class="go-title">GAME OVER</h2>
+                <p id="go-wave-text">Bạn đã vượt qua Wave 0</p>
+                <div class="go-buttons">
+                    <button class="btn btn-green" onclick="restartGame()">CHƠI LẠI</button>
+                    <button class="btn btn-cyan" onclick="quitToMenu()">THOÁT RA MENU</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="bottom-panel">
+            <div class="upgrade-grid">
+                <button class="upg-btn" id="btn-dmg" onclick="buyUpgrade('damage')">
+                    <div class="upg-title">Sát Thương</div>
+                    <div class="upg-val" id="val-dmg">15</div>
+                    <div class="upg-cost">Nâng cấp: <span id="cost-dmg">10</span> 🪙</div>
+                </button>
+                <button class="upg-btn" id="btn-spd" onclick="buyUpgrade('speed')">
+                    <div class="upg-title">Tốc Độ Bắn</div>
+                    <div class="upg-val" id="val-spd">2.0/s</div>
+                    <div class="upg-cost">Nâng cấp: <span id="cost-spd">15</span> 🪙</div>
+                </button>
+                <button class="upg-btn" id="btn-hp" onclick="buyUpgrade('hp')">
+                    <div class="upg-title">Máu Tháp</div>
+                    <div class="upg-val" id="val-hp">100</div>
+                    <div class="upg-cost">Nâng cấp: <span id="cost-hp">20</span> 🪙</div>
+                </button>
+                <button class="upg-btn" id="btn-multi" onclick="buyUpgrade('multishot')">
+                    <div class="upg-title">Tỉ Lệ Bắn Nhiều Tên</div>
+                    <div class="upg-val" id="val-multi">2.00%</div>
+                    <div class="upg-cost">Nâng cấp: <span id="cost-multi">30</span> 🪙</div>
+                </button>
+                <button class="upg-btn" id="btn-rng" onclick="buyUpgrade('range')">
+                    <div class="upg-title">Tầm Bắn</div>
+                    <div class="upg-val" id="val-rng">150</div>
+                    <div class="upg-cost">Nâng cấp: <span id="cost-rng">20</span> 🪙</div>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="td.js"></script>
+</body>
+</html>
