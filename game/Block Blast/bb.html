@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Blast</title>
+    <link rel="stylesheet" href="bb.css">
+</head>
+<body>
+    <div class="game-container">
+        
+        <!-- 1. MÀN HÌNH SẢNH CHỜ -->
+        <div id="startScreen">
+            <h1 class="game-title">BLOCK BLAST</h1>
+            <p class="start-sub">Xếp khối gạch - Phá vỡ kỷ lục!</p>
+            <button class="btn-play" onclick="startGame()">BẮT ĐẦU CHƠI</button>
+        </div>
+
+        <!-- 2. MÀN HÌNH CHƠI GAME -->
+        <div id="gameScreen">
+            <!-- Nút X nằm trong gameScreen để sảnh chờ che khuất -->
+            <button class="btn-close" onclick="exitGame()" title="Thoát game">✕</button>
+
+            <header>
+                <div class="score-board">
+                    <div class="score-box">
+                        <span>ĐIỂM</span>
+                        <h2 id="score">0</h2>
+                    </div>
+                    <div class="score-box">
+                        <span>CAO NHẤT</span>
+                        <h2 id="high-score">0</h2>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Bàn chơi 8x8 -->
+            <div id="grid" class="grid"></div>
+
+            <!-- Khung chứa 3 khối gạch gợi ý -->
+            <div id="shapes-container" class="shapes-container"></div>
+        </div>
+
+    </div>
+
+    <script src="bb.js"></script>
+</body>
+</html>
