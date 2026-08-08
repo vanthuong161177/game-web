@@ -33,10 +33,10 @@
         <aside>
             <h2>MENU</h2>
             <div class="menu-item active">🏠 Trang chủ</div>
-            <div class="menu-item">🎮 Tất cả game</div>
-            <div class="menu-item">🔥 Phổ biến</div>
-            <div class="menu-item">🆕 Mới nhất</div>
-            <div class="menu-item">⭐ Yêu thích</div>
+            <div class="menu-item">🎮 cms</div>
+            <div class="menu-item">🔥 Cms</div>
+            <div class="menu-item">🆕 Cms</div>
+            <div class="menu-item">⭐ Cms</div>
             <hr>
             <div class="menu-item">⚙ Cài đặt</div>
         </aside>
@@ -64,7 +64,7 @@
 
                 <div class="grid">
 
-                    <!-- CARD GAME 1 -->
+                    <!-- CARD GAME 1: SNAKE -->
                     <div class="card" id="snakeCard">
                         <div class="image">
                             <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150' style='background:%230d111a'><path d='M20 120 H80 V50 H140 V90' fill='none' stroke='%2300ff88' stroke-width='14' stroke-linecap='round' stroke-linejoin='round'/><circle cx='140' cy='90' r='7' fill='%2300ff88'/><circle cx='165' cy='90' r='7' fill='%23ff0055'/><circle cx='140' cy='25' r='6' fill='%23ffcc00'/></svg>" alt="Snake" style="width: 100%; height: 100%; object-fit: cover;" />
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                     
-                    <!-- CARD GAME 2 -->
+                    <!-- CARD GAME 2: TOWER DEFENSE -->
                     <div class="card" id="tdCard">
                         <div class="image">
                             <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150' style='background:%230d111a'><circle cx='100' cy='75' r='18' fill='%23ff0055'/><circle cx='100' cy='75' r='55' fill='none' stroke='%2300f2fe' stroke-width='2' stroke-dasharray='4'/><circle cx='40' cy='40' r='8' fill='%2300ff88'/><circle cx='160' cy='110' r='8' fill='%2300ff88'/><line x1='100' y1='75' x2='44' y2='43' stroke='%2300f2fe' stroke-width='3'/></svg>" alt="Tower Defense" style="width: 100%; height: 100%; object-fit: cover;" />
@@ -86,15 +86,18 @@
                         </div>
                     </div>
 
-                    <!-- CÁC CARD KHÁC (ĐỂ TRANG TRÍ) -->
-                    <div class="card">
-                        <div class="image"></div>
+                    <!-- CARD GAME 3: BLOCK BLAST (ĐÃ SỬA CHUẨN ĐỒNG BỘ) -->
+                    <div class="card" id="blockblastCard">
+                        <div class="image">
+                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150' style='background:%230a0e17'><defs><linearGradient id='yellow_top' x1='0' y1='0' x2='0' y2='1'><stop offset='0%25' stop-color='%23ffea75'/><stop offset='100%25' stop-color='%23ffd000'/></linearGradient><linearGradient id='yellow_right' x1='0' y1='0' x2='1' y2='0'><stop offset='0%25' stop-color='%23d9b000'/><stop offset='100%25' stop-color='%23997c00'/></linearGradient><linearGradient id='blue_top' x1='0' y1='0' x2='0' y2='1'><stop offset='0%25' stop-color='%235b9dff'/><stop offset='100%25' stop-color='%232563eb'/></linearGradient><linearGradient id='blue_right' x1='0' y1='0' x2='1' y2='0'><stop offset='0%25' stop-color='%231d4ed8'/><stop offset='100%25' stop-color='%231e3a8a'/></linearGradient><linearGradient id='green_top' x1='0' y1='0' x2='0' y2='1'><stop offset='0%25' stop-color='%234ade80'/><stop offset='100%25' stop-color='%2316a34a'/></linearGradient><linearGradient id='green_right' x1='0' y1='0' x2='1' y2='0'><stop offset='0%25' stop-color='%2315803d'/><stop offset='100%25' stop-color='%2314532d'/></linearGradient><linearGradient id='red_top' x1='0' y1='0' x2='0' y2='1'><stop offset='0%25' stop-color='%23f87171'/><stop offset='100%25' stop-color='%23dc2626'/></linearGradient><linearGradient id='red_right' x1='0' y1='0' x2='1' y2='0'><stop offset='0%25' stop-color='%23b91c1c'/><stop offset='100%25' stop-color='%237f1d1d'/></linearGradient></defs><g stroke='%230a0e17' stroke-width='1.5'><g transform='translate(52, 22)'><rect x='0' y='0' width='28' height='28' fill='url(%23yellow_top)'/><path d='M0,28 L28,28 L28,0 L0,0 Z' fill='none'/><polygon points='0,0 28,0 22,6 6,6' fill='%23fff' opacity='0.4'/><polygon points='28,0 28,28 22,22 22,6' fill='url(%23yellow_right)'/><polygon points='0,28 28,28 22,22 6,22' fill='%23997c00'/><polygon points='0,0 0,28 6,22 6,6' fill='%23ffe866'/><rect x='6' y='6' width='16' height='16' fill='url(%23yellow_top)'/></g><g transform='translate(82, 22)'><rect x='0' y='0' width='28' height='28' fill='url(%23yellow_top)'/><polygon points='0,0 28,0 22,6 6,6' fill='%23fff' opacity='0.4'/><polygon points='28,0 28,28 22,22 22,6' fill='url(%23yellow_right)'/><polygon points='0,28 28,28 22,22 6,22' fill='%23997c00'/><polygon points='0,0 0,28 6,22 6,6' fill='%23ffe866'/><rect x='6' y='6' width='16' height='16' fill='url(%23yellow_top)'/></g><g transform='translate(52, 52)'><rect x='0' y='0' width='28' height='28' fill='url(%23yellow_top)'/><polygon points='0,0 28,0 22,6 6,6' fill='%23fff' opacity='0.4'/><polygon points='28,0 28,28 22,22 22,6' fill='url(%23yellow_right)'/><polygon points='0,28 28,28 22,22 6,22' fill='%23997c00'/><polygon points='0,0 0,28 6,22 6,6' fill='%23ffe866'/><rect x='6' y='6' width='16' height='16' fill='url(%23yellow_top)'/></g><g transform='translate(120, 22)'><rect x='0' y='0' width='28' height='28' fill='url(%23blue_top)'/><polygon points='0,0 28,0 22,6 6,6' fill='%23fff' opacity='0.4'/><polygon points='28,0 28,28 22,22 22,6' fill='url(%23blue_right)'/><polygon points='0,28 28,28 22,22 6,22' fill='%231e3a8a'/><polygon points='0,0 0,28 6,22 6,6' fill='%2393c5fd'/><rect x='6' y='6' width='16' height='16' fill='url(%23blue_top)'/></g><g transform='translate(120, 52)'><rect x='0' y='0' width='28' height='28' fill='url(%23blue_top)'/><polygon points='0,0 28,0 22,6 6,6' fill='%23fff' opacity='0.4'/><polygon points='28,0 28,28 22,22 22,6' fill='url(%23blue_right)'/><polygon points='0,28 28,28 22,22 6,22' fill='%231e3a8a'/><polygon points='0,0 0,28 6,22 6,6' fill='%2393c5fd'/><rect x='6' y='6' width='16' height='16' fill='url(%23blue_top)'/></g><g transform='translate(120, 82)'><rect x='0' y='0' width='28' height='28' fill='url(%23green_top)'/><polygon points='0,0 28,0 22,6 6,6' fill='%23fff' opacity='0.4'/><polygon points='28,0 28,28 22,22 22,6' fill='url(%23green_right)'/><polygon points='0,28 28,28 22,22 6,22' fill='%2314532d'/><polygon points='0,0 0,28 6,22 6,6' fill='%2386efac'/><rect x='6' y='6' width='16' height='16' fill='url(%23green_top)'/></g><g transform='translate(90, 82)'><rect x='0' y='0' width='28' height='28' fill='url(%23green_top)'/><polygon points='0,0 28,0 22,6 6,6' fill='%23fff' opacity='0.4'/><polygon points='28,0 28,28 22,22 22,6' fill='url(%23green_right)'/><polygon points='0,28 28,28 22,22 6,22' fill='%2314532d'/><polygon points='0,0 0,28 6,22 6,6' fill='%2386efac'/><rect x='6' y='6' width='16' height='16' fill='url(%23green_top)'/></g><g transform='translate(38, 82)'><rect x='0' y='0' width='28' height='28' fill='url(%23red_top)'/><polygon points='0,0 28,0 22,6 6,6' fill='%23fff' opacity='0.4'/><polygon points='28,0 28,28 22,22 22,6' fill='url(%23red_right)'/><polygon points='0,28 28,28 22,22 6,22' fill='%237f1d1d'/><polygon points='0,0 0,28 6,22 6,6' fill='%23fca5a5'/><rect x='6' y='6' width='16' height='16' fill='url(%23red_top)'/></g></g></svg>" alt="Block Blast" style="width: 100%; height: 100%; object-fit: cover;" />
+                        </div>
                         <div class="info">
-                            <h3>Tetris</h3>
-                            <p>Arcade</p>
+                            <h3>Block Blast</h3>
+                            <p>Puzzle</p>
                         </div>
                     </div>
 
+                    <!-- CARD GAME 4: FLAPPY BIRD -->
                     <div class="card">
                         <div class="image"></div>
                         <div class="info">
@@ -103,6 +106,7 @@
                         </div>
                     </div>
 
+                    <!-- CARD GAME 5: PACMAN -->
                     <div class="card">
                         <div class="image"></div>
                         <div class="info">
@@ -111,6 +115,7 @@
                         </div>
                     </div>
 
+                    <!-- CARD GAME 6: TANK -->
                     <div class="card">
                         <div class="image"></div>
                         <div class="info">
